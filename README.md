@@ -1,13 +1,8 @@
-## Sequential MNIST & Permuted Sequential MNIST
+## Sequential Learning Network with Residual Blocks: Incorporating Temporal Convolutional Information into Recurrent Neural Networks
 
 ### Overview
 
-MNIST is a handwritten digit classification dataset (Lecun et al., 1998) that is frequently used to 
-test deep learning models. In particular, sequential MNIST is frequently used to test a recurrent 
-network’s ability to retain information from the distant past (see paper for references). In 
-this task, each MNIST image (28 x 28) is presented to the model as a 784 × 1 sequence 
-for digit classification. In the more challenging permuted MNIST (P-MNIST) setting, the order of 
-the sequence is permuted at a (fixed) random order.
+This is the code for SLN model. Temporal convolutional networks (TCNs) have shown remarkable performance in sequence modeling and surpassed recurrent neural networks (RNNs) in a number of tasks. However, performing exceptionally on extremely long sequences remains an obstacle due to the restrained receptive field of temporal convolutions and a lack of forgetting mechanism. Although RNNs can carry out state transmission down the full sequence length and latch information by means of a forgetting gate, the issue of information saturation and vanishing or exploding gradients that occur during back-propagation due to the effect of multiplicative accumulation, still persist. To benefit from both temporal convolutions and RNNs, we propose a neural architecture that merge temporal convolutional data into recurrent networks. The temporal convolutions are employed intermittently and fused into the hidden states of RNNs with the assistance of attention for providing long-term information. With this architecture, it is not needed for convolutional networks to cover the total length of the sequence, thus gradient and saturation issues in RNNs are ameliorated since convolutions are integrated into its cells and the state is updated with convolutional information. 
 
 ### Data
 
